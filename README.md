@@ -45,6 +45,27 @@ assert.deepEqual( fruit, [
 
 You can also import `.tsv` files.
 
+### Custom processors
+
+You can supply a function that processes each row in the returned array – for example turning numeric values into numbers. The function can either manipulate the existing row object, or return an entirely new one.
+
+```js
+
+rollup({
+  entry: 'main.js',
+  plugins: [
+    dsv({
+      processRow: function ( row ) {
+        Object.keys( row ).forEach( key => {
+          var value = row[ key ];
+          row[ key ] = isNaN( +value ) ? value : +value;
+        });
+      }
+    })
+  ]
+}).then(...)
+```
+
 ## License
 
 MIT
