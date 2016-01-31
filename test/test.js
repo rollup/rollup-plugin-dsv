@@ -31,4 +31,23 @@ describe( 'rollup-plugin-commonjs', () => {
 			plugins: [ dsv() ]
 		}).then( executeBundle );
 	});
+
+	it( 'uses a custom processor', () => {
+		const parse = value => {
+			return isNaN( +value ) ? value : +value;
+		};
+
+		return rollup({
+			entry: 'samples/process/main.js',
+			plugins: [
+				dsv({
+					processRow: function ( row ) {
+						Object.keys( row ).forEach( key => {
+							row[ key ] = parse( row[ key ] );
+						});
+					}
+				})
+			]
+		}).then( executeBundle );
+	});
 });

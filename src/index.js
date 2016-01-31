@@ -15,7 +15,11 @@ export default function dsv ( options = {} ) {
 			const ext = extname( id );
 			if ( !( ext in parsers ) ) return null;
 
-			const rows = parsers[ ext ].parse( code );
+			let rows = parsers[ ext ].parse( code );
+
+			if ( options.processRow ) {
+				rows = rows.map( row => options.processRow( row ) || row );
+			}
 
 			return {
 				code: `export default ${toSource( rows )};`,
