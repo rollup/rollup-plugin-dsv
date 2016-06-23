@@ -1,5 +1,9 @@
 # rollup-plugin-dsv changelog
 
+## 1.1.2
+
+* Return a `name`
+
 ## 1.1.1
 
 * Add missing dependencies

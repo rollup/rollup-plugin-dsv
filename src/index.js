@@ -9,6 +9,8 @@ export default function dsv ( options = {} ) {
 	const filter = createFilter( options.include, options.exclude );
 
 	return {
+		name: 'dsv',
+
 		transform ( code, id ) {
 			if ( !filter( id ) ) return null;
 
