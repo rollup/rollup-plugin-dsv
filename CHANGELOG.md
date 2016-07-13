@@ -1,5 +1,9 @@
 # rollup-plugin-dsv changelog
 
+## 1.2.0
+
+* Pass `id` to `processRow`
+
 ## 1.1.2
 
 * Return a `name`

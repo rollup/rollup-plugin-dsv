@@ -55,7 +55,7 @@ rollup({
   entry: 'main.js',
   plugins: [
     dsv({
-      processRow: function ( row ) {
+      processRow: function ( row, id ) {
         Object.keys( row ).forEach( key => {
           var value = row[ key ];
           row[ key ] = isNaN( +value ) ? value : +value;
