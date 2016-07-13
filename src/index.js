@@ -20,7 +20,7 @@ export default function dsv ( options = {} ) {
 			let rows = parsers[ ext ].parse( code );
 
 			if ( options.processRow ) {
-				rows = rows.map( row => options.processRow( row ) || row );
+				rows = rows.map( row => options.processRow( row, id ) || row );
 			}
 
 			return {

@@ -50,4 +50,20 @@ describe( 'rollup-plugin-commonjs', () => {
 			]
 		}).then( executeBundle );
 	});
+
+	it( 'uses a custom processor with id', () => {
+		return rollup({
+			entry: 'samples/process-id/main.js',
+			plugins: [
+				dsv({
+					processRow: function ( row, id ) {
+						return {
+							type: row.type[ /lower/.test( id ) ? 'toLowerCase' : 'toUpperCase' ](),
+							count: +row.count
+						};
+					}
+				})
+			]
+		}).then( executeBundle );
+	});
 });
