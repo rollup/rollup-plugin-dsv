@@ -3,7 +3,7 @@
   "description": "Convert .csv and .tsv files into JavaScript modules with d3-dsv",
   "version": "1.2.0",
   "author": "Rich Harris",
-  "repository": "https://github.com/rollup/rollup-plugin-dsv",
+  "repository": "rollup/rollup-plugin-dsv",
   "license": "MIT",
   "main": "dist/rollup-plugin-dsv.cjs.js",
   "jsnext:main": "dist/rollup-plugin-dsv.es6.js",
