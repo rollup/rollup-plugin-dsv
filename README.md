@@ -1,3 +1,7 @@
+# Moved
+
+This module has moved and is now available at [@rollup/plugin-dsv](https://github.com/rollup/plugins). Please update your dependencies. This repository is no longer maintained.
+
 # rollup-plugin-dsv
 
 Convert .csv and .tsv files into JavaScript modules with [d3-dsv](https://github.com/d3/d3-dsv).
